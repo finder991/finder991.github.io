@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Зеркало скачки файлов</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            color: #333;
+            margin: 0;
+            padding: 0;
+        }
+        .container {
+            width: 80%;
+            margin: 0 auto;
+            padding: 20px;
+            background: #fff;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        h1 {
+            text-align: center;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+        }
+        table, th, td {
+            border: 1px solid #ddd;
+        }
+        th, td {
+            padding: 12px;
+            text-align: left;
+        }
+        th {
+            background-color: #f2f2f2;
+        }
+        tr:hover {
+            background-color: #f9f9f9;
+        }
+        a {
+            color: #1a73e8;
+            text-decoration: none;
+        }
+        a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Зеркало скачки файлов</h1>
+        <table>
+            <thead>
+                <tr>
+                    <th>Имя файла</th>
+                    <th>Размер</th>
+                    <th>Дата добавления</th>
+                    <th>Скачать</th>
+                </tr>
+            </thead>
+            <tbody>
+                <!-- Пример файла -->
+                <tr>
+                    <td>example-file.zip</td>
+                    <td>15 MB</td>
+                    <td>19.05.2024</td>
+                    <td><a href="files/example-file.zip" download>Скачать</a></td>
+                </tr>
+                <!-- Добавьте сюда другие файлы аналогично -->
+                <tr>
+                    <td>another-file.pdf</td>
+                    <td>2 MB</td>
+                    <td>18.05.2024</td>
+                    <td><a href="files/another-file.pdf" download>Скачать</a></td>
+                </tr>
+                <!-- Вы можете использовать скрипты для автоматического заполнения этих строк данными с сервера -->
+            </tbody>
+        </table>
+    </div>
+</body>
+</html>
