@@ -1,9 +1,9 @@
 <!DOCTYPE html>
-<html lang="ua">
+<html lang="ru">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Зеркало завантаження файлів</title>
+    <title>Зеркало скачки файлов</title>
     <style>
         body {
             font-family: Arial, sans-serif;
@@ -55,36 +55,17 @@
         <table>
             <thead>
                 <tr>
-                    <th>Имя файла</th>
-                    <th>Размер</th>
-                    <th>Дата добавления</th>
-                    <th>Скачать</th>
+                    <th>ім'я файла</th>
+                    <th>Cкачати</th>
                 </tr>
             </thead>
             <tbody id="file-list">
-                <!-- Файлы будут загружены сюда автоматически -->
+                <tr>
+                    <td>Лаб22_10 варіант</td>
+                    <td><a href="https://finder991.github.io/Lab22_v10_z1-2.rar" download>Скачать</a></td>
+                </tr>
             </tbody>
         </table>
     </div>
-    <script>
-        document.addEventListener("DOMContentLoaded", function() {
-            fetch('files.json')
-                .then(response => response.json())
-                .then(files => {
-                    const fileList = document.getElementById('file-list');
-                    files.forEach(file => {
-                        const row = document.createElement('tr');
-                        row.innerHTML = `
-                            <td>${file.name}</td>
-                            <td>${file.size}</td>
-                            <td>${file.date}</td>
-                            <td><a href="files/${file.name}" download>Скачать</a></td>
-                        `;
-                        fileList.appendChild(row);
-                    });
-                })
-                .catch(error => console.error('Error fetching file list:', error));
-        });
-    </script>
 </body>
 </html>
