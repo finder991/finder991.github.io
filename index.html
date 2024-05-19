@@ -61,24 +61,30 @@
                     <th>Скачать</th>
                 </tr>
             </thead>
-            <tbody>
-                <!-- Пример файла -->
-                <tr>
-                    <td>example-file.zip</td>
-                    <td>15 MB</td>
-                    <td>19.05.2024</td>
-                    <td><a href="files/example-file.zip" download>Скачать</a></td>
-                </tr>
-                <!-- Добавьте сюда другие файлы аналогично -->
-                <tr>
-                    <td>another-file.pdf</td>
-                    <td>2 MB</td>
-                    <td>18.05.2024</td>
-                    <td><a href="files/another-file.pdf" download>Скачать</a></td>
-                </tr>
-                <!-- Вы можете использовать скрипты для автоматического заполнения этих строк данными с сервера -->
+            <tbody id="file-list">
+                <!-- Файлы будут загружены сюда автоматически -->
             </tbody>
         </table>
     </div>
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            fetch('/files')
+                .then(response => response.json())
+                .then(files => {
+                    const fileList = document.getElementById('file-list');
+                    files.forEach(file => {
+                        const row = document.createElement('tr');
+                        row.innerHTML = `
+                            <td>${file.name}</td>
+                            <td>${file.size}</td>
+                            <td>${file.date}</td>
+                            <td><a href="files/${file.name}" download>Скачать</a></td>
+                        `;
+                        fileList.appendChild(row);
+                    });
+                })
+                .catch(error => console.error('Error fetching file list:', error));
+        });
+    </script>
 </body>
 </html>
