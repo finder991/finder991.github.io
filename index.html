@@ -62,13 +62,13 @@
                 </tr>
             </thead>
             <tbody id="file-list">
-     
+                <!-- Файлы будут загружены сюда автоматически -->
             </tbody>
         </table>
     </div>
     <script>
         document.addEventListener("DOMContentLoaded", function() {
-            fetch('/files')
+            fetch('files.json')
                 .then(response => response.json())
                 .then(files => {
                     const fileList = document.getElementById('file-list');
