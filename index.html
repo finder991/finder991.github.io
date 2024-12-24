@@ -128,11 +128,8 @@
         Ваш браузер не підтримує аудіо.
     </audio>
 
-    <!-- Невидима кнопка для взаємодії з користувачем -->
-    <button class="invisible-button" onclick="playAudio()"> </button>
-
     <script>
-        // Функція для відтворення аудіо після кліку
+        // Функція для відтворення аудіо після взаємодії з користувачем
         function playAudio() {
             const audio = document.getElementById('background-music');
             audio.play().then(() => {
@@ -142,11 +139,9 @@
             });
         }
 
-        // Запуск аудіо при натисканні на сторінку
-        window.addEventListener('click', () => {
-            const button = document.querySelector('.invisible-button');
-            button.click(); // Імітація кліку для запуску аудіо
-        });
+        // Запуск аудіо після першої взаємодії з екраном
+        window.addEventListener('click', playAudio);
+        window.addEventListener('touchstart', playAudio); // Підтримка мобільних пристроїв
     </script>
 </body>
 </html>
