@@ -1,103 +1,145 @@
 <!DOCTYPE html>
-<html lang="ru">
+<html lang="uk">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Зеркало скачки файлов</title>
+    <title>Пробач мені</title>
     <style>
         body {
-            font-family: Arial, sans-serif;
-            background-color: #f4f4f4;
-            color: #333;
             margin: 0;
             padding: 0;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            background: linear-gradient(45deg, #ff9a9e 0%, #fad0c4 99%, #fad0c4 100%);
+            font-family: Arial, sans-serif;
+            color: #444;
         }
+
         .container {
-            width: 80%;
-            margin: 0 auto;
-            padding: 20px;
-            background: #fff;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-        }
-        h1 {
             text-align: center;
+            max-width: 800px;
+            padding: 2rem;
+            background: rgba(255, 255, 255, 0.9);
+            border-radius: 20px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            margin: 20px;
         }
-        table {
-            width: 100%;
-            border-collapse: collapse;
-            margin-top: 20px;
+
+        h1 {
+            color: #ff6b6b;
+            font-size: 2.5rem;
+            margin-bottom: 1.5rem;
+            animation: fadeIn 2s ease-in;
         }
-        table, th, td {
-            border: 1px solid #ddd;
+
+        .heart {
+            font-size: 5rem;
+            color: #ff6b6b;
+            animation: pulse 1.5s infinite;
+            margin: 1rem 0;
         }
-        th, td {
-            padding: 12px;
-            text-align: left;
+
+        p {
+            font-size: 1.2rem;
+            line-height: 1.6;
+            margin: 1rem 0;
         }
-        th {
-            background-color: #f2f2f2;
+
+        .message {
+            padding: 1.5rem;
+            border: 2px solid #ff9a9e;
+            border-radius: 15px;
+            margin: 2rem 0;
+            background: white;
         }
-        tr:hover {
-            background-color: #f9f9f9;
+
+        @keyframes pulse {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.1); }
+            100% { transform: scale(1); }
         }
-        a {
-            color: #1a73e8;
-            text-decoration: none;
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
         }
-        a:hover {
-            text-decoration: underline;
+
+        .flowers {
+            font-size: 2rem;
+            margin: 1rem 0;
+            animation: fadeIn 3s ease-in;
+        }
+
+        button {
+            background: #ff6b6b;
+            color: white;
+            border: none;
+            padding: 1rem 2rem;
+            font-size: 1.2rem;
+            border-radius: 30px;
+            cursor: pointer;
+            transition: transform 0.3s ease;
+            margin: 1rem;
+        }
+
+        button:hover {
+            transform: scale(1.05);
+            background: #ff5252;
+        }
+
+        /* Стиль невидимо кнопки */
+        .invisible-button {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            opacity: 0;
+            z-index: -1;
         }
     </style>
 </head>
 <body>
     <div class="container">
-        <h1>Зеркало завантаження файлів</h1>
-        <table>
-            <thead>
-                <tr>
-                    <th>ім'я файла</th>
-                    <th>Cкачати</th>
-                </tr>
-            </thead>
-            <tbody id="file-list">
-                <tr>
-                    <td>Лаб16_19 варіант</td>
-                    <td><a href="Lab16_v19_z1-3.c" download>Скачати</a></td>
-                </tr>
-                <tr>
-                    <td>Лаб17_19 варіант</td>
-                    <td><a href="lab17_v19_z1-2.c" download>Скачати</a></td>
-                </tr>
-                <tr>
-                    <td>Лаб18_19 варіант</td>
-                    <td><a href="lab18_v19_z1.c" download>Скачати</a></td>
-                </tr>
-                <tr>
-                    <td>Лаб19_19 варіант</td>
-                    <td><a href="lab19_v19_z1-2.c" download>Скачати</a></td>
-                </tr>
-                <tr>
-                    <td>Лаб20_19 варіант</td>
-                    <td><a href="lab20_v19_z1-2.c" download>Скачати</a></td>
-                </tr>
-                 <tr>
-                    <td>Лаб21_19 варіант</td>
-                    <td><a href="lab21_v19_z1-3.c" download>Скачати</a></td>
-                </tr>
-                <tr>
-                    <td>Лаб22_19 варіант</td>
-                    <td><a href="lab22_v19_z1-2.zip" download>Скачати</a></td>
-                </tr>
-                <tr>
-                    <td>Лаб23_19 варіант</td>
-                    <td><a href="lab23_v19_z1-2.zip" download>Скачати</a></td>
-                </tr>
-                <tr>
-                    <td>Лаб24_19 варіант</td>
-                    <td><a href="lab24_v19_z1.c" download>Скачати</a></td>
-                </tr>
-            </tbody>
-        </table>
+        <h1>Пробач мені, будь ласка</h1>
+        <div class="heart">❤️</div>
+        <div class="flowers">🌹🌸🌹</div>
+        <div class="message">
+            <p>Я знаю, що завинив перед тобою, і щиро шкодую про це.</p>
+            <p>Ти особлива людина в моєму житті, і я не хочу тебе втратити.</p>
+            <p>Обіцяю виправити свої помилки і стати кращим.</p>
+            <p>Ти заслуговуєш на найкраще, і я хочу бути достойним тебе.</p>
+        </div>
+
+        <p>Кожен день без твоєї посмішки - це день без сонця.</p>
+        <p>Дай мені, будь ласка, шанс все виправити.</p>
+        
+        <div class="flowers">🌺💐🌺</div>
+        
+        <button>
+            Приймеш моє вибачення?
+        </button>
     </div>
+
+    <audio id="background-music" loop muted>
+        <source src="mylove.mp3" type="audio/mpeg">
+        Ваш браузер не підтримує аудіо.
+    </audio>
+
+    <script>
+        // Функція для відтворення аудіо та вмикання звуку
+        function playAudio() {
+            const audio = document.getElementById('background-music');
+            audio.play().then(() => {
+                audio.muted = false; // Вимкнути звук після першого запуску
+            }).catch(error => {
+                console.log('Автозапуск аудіо заблоковано:', error);
+            });
+        }
+
+        // Запуск аудіо після завантаження сторінки через взаємодію з документом
+        window.addEventListener('click', playAudio); // Будь-який клік запускає аудіо
+    </script>
 </body>
 </html>
