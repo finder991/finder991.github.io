@@ -16,6 +16,7 @@
             background: linear-gradient(45deg, #ff9a9e 0%, #fad0c4 99%, #fad0c4 100%);
             font-family: Arial, sans-serif;
             color: #444;
+            cursor: pointer; /* Курсор вказує на можливість натискання */
         }
 
         .container {
@@ -90,18 +91,10 @@
             background: #ff5252;
         }
 
-        /* Стиль для невидимо кнопки */
-        .invisible-button {
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-            opacity: 0;
-            z-index: -1;
-        }
     </style>
 </head>
 <body>
+
     <div class="container">
         <h1>Пробач мені, будь ласка</h1>
         <div class="heart">❤️</div>
@@ -128,25 +121,20 @@
         Ваш браузер не підтримує аудіо.
     </audio>
 
-    <!-- Невидима кнопка для взаємодії з користувачем -->
-    <button class="invisible-button" onclick="playAudio()"> </button>
-
     <script>
-        // Функція для відтворення аудіо після кліку
+        // Функція для запуску аудіо
         function playAudio() {
             const audio = document.getElementById('background-music');
             audio.play().then(() => {
-                audio.muted = false; // Вимкнути звук після першого запуску
+                audio.muted = false; // Вимикаємо звук після першого запуску
             }).catch(error => {
                 console.log('Автозапуск аудіо заблоковано:', error);
             });
         }
 
-        // Запуск аудіо при натисканні на сторінку
-        window.addEventListener('click', () => {
-            const button = document.querySelector('.invisible-button');
-            button.click(); // Імітація кліку для запуску аудіо
-        });
+        // Запуск аудіо при натисканні на сторінку або кнопку
+        document.body.addEventListener('click', playAudio);
     </script>
+
 </body>
 </html>
