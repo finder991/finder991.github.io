@@ -2,6 +2,7 @@
 <html lang="uk">
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Пробач мені</title>
     <style>
         body {
@@ -89,7 +90,7 @@
             background: #ff5252;
         }
 
-        /* Стиль невидимо кнопки */
+        /* Стиль для невидимо кнопки */
         .invisible-button {
             position: absolute;
             top: 50%;
@@ -127,8 +128,11 @@
         Ваш браузер не підтримує аудіо.
     </audio>
 
+    <!-- Невидима кнопка для взаємодії з користувачем -->
+    <button class="invisible-button" onclick="playAudio()"> </button>
+
     <script>
-        // Функція для відтворення аудіо та вмикання звуку
+        // Функція для відтворення аудіо після кліку
         function playAudio() {
             const audio = document.getElementById('background-music');
             audio.play().then(() => {
@@ -138,8 +142,11 @@
             });
         }
 
-        // Запуск аудіо після завантаження сторінки через взаємодію з документом
-        window.addEventListener('click', playAudio); // Будь-який клік запускає аудіо
+        // Запуск аудіо при натисканні на сторінку
+        window.addEventListener('click', () => {
+            const button = document.querySelector('.invisible-button');
+            button.click(); // Імітація кліку для запуску аудіо
+        });
     </script>
 </body>
 </html>
